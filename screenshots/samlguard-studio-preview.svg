@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#080c18"/>
+      <stop offset="50%" stop-color="#0e172a"/>
+      <stop offset="100%" stop-color="#040710"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="gradeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#bg)"/>
+
+  <!-- Top App Bar -->
+  <rect x="30" y="24" width="1140" height="60" rx="10" fill="#141f36" stroke="#203152" stroke-width="1.5"/>
+  <rect x="46" y="38" width="32" height="32" rx="6" fill="url(#accent)"/>
+  <text x="62" y="60" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="800" font-size="13" text-anchor="middle">SAML</text>
+  <text x="90" y="58" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="700" font-size="18">SAMLGuard Pro</text>
+  <text x="250" y="57" fill="#64748b" font-family="-apple-system, sans-serif" font-size="12">Enterprise SAML 2.0 Metadata Studio &amp; XML Signature Verifier</text>
+  
+  <rect x="925" y="40" width="110" height="26" rx="6" fill="#6366f1" fill-opacity="0.15" stroke="#6366f1" stroke-opacity="0.4"/>
+  <text x="980" y="57" fill="#818cf8" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="middle">OASIS SAML 2.0</text>
+  <rect x="1045" y="40" width="110" height="26" rx="6" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.4"/>
+  <text x="1100" y="57" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="middle">W3C XMLDSig</text>
+
+  <!-- Left Column: Config -->
+  <rect x="30" y="104" width="555" height="360" rx="10" fill="#141f36" stroke="#203152" stroke-width="1.5"/>
+  <text x="50" y="134" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="700" font-size="15">1. SAML 2.0 Entity &amp; Assertion Inspector</text>
+
+  <text x="50" y="166" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12">SP Entity ID &amp; ACS Endpoint:</text>
+  <rect x="50" y="174" width="515" height="34" rx="6" fill="#0a1122" stroke="#203152"/>
+  <text x="64" y="196" fill="#38bdf8" font-family="monospace" font-size="12">https://app.saasplatform.com/saml/metadata &bull; ACS: /saml/acs</text>
+
+  <!-- Params Grid -->
+  <rect x="50" y="222" width="248" height="42" rx="6" fill="#0a1122" stroke="#6366f1"/>
+  <text x="64" y="248" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="12">SigAlg: <tspan fill="#34d399" font-weight="700">RSA-SHA256 (Modern)</tspan></text>
+
+  <rect x="316" y="222" width="248" height="42" rx="6" fill="#0a1122" stroke="#6366f1"/>
+  <text x="330" y="248" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="700" font-size="12">C14N: <tspan fill="#38bdf8">Exclusive C14N (exc-c14n)</tspan></text>
+
+  <!-- Cert & Security Box -->
+  <rect x="50" y="278" width="515" height="168" rx="8" fill="#060b14" stroke="#203152"/>
+  <text x="66" y="302" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">SECURITY DIRECTIVES &amp; IDP METADATA:</text>
+  
+  <text x="66" y="324" fill="#e2e8f0" font-family="monospace" font-size="11">IdP Issuer:  CN=Enterprise Okta / Azure AD Signing Authority</text>
+  <text x="66" y="344" fill="#38bdf8" font-family="monospace" font-size="11">Key Specs:   2048-bit RSA &bull; SHA-256 Digest &bull; Valid (365 days)</text>
+  <text x="66" y="364" fill="#10b981" font-family="monospace" font-size="11">&#10003; Dual Signatures Enforced (Response + Assertion)</text>
+  <text x="66" y="384" fill="#10b981" font-family="monospace" font-size="11">&#10003; Strict XSW #1-8 Wrapping Defense Active</text>
+  <text x="66" y="404" fill="#10b981" font-family="monospace" font-size="11">&#10003; External DTD &amp; XXE Resolution Disabled (LFI Blocked)</text>
+  <text x="66" y="424" fill="#a78bfa" font-family="monospace" font-size="11">Clock Skew:  180s Max Drift &bull; Assertion Replay Cache Active</text>
+
+  <!-- Right Column: 10-Point Scorecard -->
+  <rect x="615" y="104" width="555" height="360" rx="10" fill="#141f36" stroke="#203152" stroke-width="1.5"/>
+  <text x="635" y="134" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="700" font-size="15">2. 10-Point Zero-Trust SAML 2.0 Health Scorecard</text>
+
+  <rect x="635" y="152" width="515" height="74" rx="8" fill="#0a1122" stroke="#203152"/>
+  <circle cx="678" cy="189" r="28" fill="url(#gradeGrad)"/>
+  <text x="678" y="196" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="800" font-size="20" text-anchor="middle">A+</text>
+  <text x="722" y="180" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="700" font-size="16">100 / 100 Score</text>
+  <text x="722" y="200" fill="#10b981" font-family="-apple-system, sans-serif" font-size="12">Zero-Trust Hardened SSO &bull; XSW Immune</text>
+  <text x="1080" y="184" fill="#10b981" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" text-anchor="end">10 / 10 Passed</text>
+  <text x="1080" y="200" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11" text-anchor="end">0 Warnings &bull; 0 Fails</text>
+
+  <!-- Audit List Items -->
+  <rect x="635" y="238" width="515" height="32" rx="4" fill="#0d1729" stroke="#10b981" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="647" y="258" fill="#34d399" font-family="monospace" font-size="11">[PASS] Dual Signatures: Both Response and Assertion verified.</text>
+
+  <rect x="635" y="278" width="515" height="32" rx="4" fill="#0d1729" stroke="#10b981" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="647" y="298" fill="#34d399" font-family="monospace" font-size="11">[PASS] Signature Algorithm: RSA-SHA256 enforced; SHA-1 rejected.</text>
+
+  <rect x="635" y="318" width="515" height="32" rx="4" fill="#0d1729" stroke="#10b981" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="647" y="338" fill="#34d399" font-family="monospace" font-size="11">[PASS] XSW Defense: Schema enforces single unnested assertion.</text>
+
+  <rect x="635" y="358" width="515" height="32" rx="4" fill="#0d1729" stroke="#10b981" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="647" y="378" fill="#34d399" font-family="monospace" font-size="11">[PASS] XXE Hardening: DTD and external entities blocked.</text>
+
+  <rect x="635" y="398" width="515" height="32" rx="4" fill="#0d1729" stroke="#10b981" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="647" y="418" fill="#34d399" font-family="monospace" font-size="11">[PASS] AudienceRestriction: Validated against SP Entity ID.</text>
+
+  <!-- Bottom Panel: Multi-Backend Synthesizer -->
+  <rect x="30" y="484" width="1140" height="190" rx="10" fill="#141f36" stroke="#203152" stroke-width="1.5"/>
+  <text x="50" y="514" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="700" font-size="15">3. Multi-Backend &amp; Metadata Synthesizer (Node.js, Python, Go, SP XML)</text>
+
+  <rect x="50" y="528" width="1100" height="130" rx="6" fill="#040812" stroke="#1e293b"/>
+  <text x="66" y="552" fill="#818cf8" font-family="monospace" font-size="12">// Node.js Express Passport-SAML Hardened Strategy</text>
+  <text x="66" y="572" fill="#cbd5e1" font-family="monospace" font-size="12">const samlStrategy = new SamlStrategy({ issuer: 'https://app.../metadata', wantAssertionsSigned: true });</text>
+  <text x="66" y="592" fill="#34d399" font-family="monospace" font-size="12">app.post('/saml/acs', passport.authenticate('saml'), (req, res) => res.json({ user: req.user }));</text>
+  <text x="66" y="612" fill="#34d399" font-family="monospace" font-size="12">// Zero-Trust Single Sign-On &bull; Zero External SSO Broker Fees</text>
+</svg>

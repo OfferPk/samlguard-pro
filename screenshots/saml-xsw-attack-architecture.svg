@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#080c18"/>
+      <stop offset="100%" stop-color="#040710"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="500" fill="url(#bg2)"/>
+
+  <text x="500" y="45" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="700" font-size="20" text-anchor="middle">
+    SAML 2.0 Security: XML Signature Wrapping (XSW #1) vs SAMLGuard Defense
+  </text>
+
+  <!-- Left: Vulnerable Architecture -->
+  <rect x="40" y="80" width="430" height="380" rx="10" fill="#141118" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="55" y="95" width="400" height="34" rx="6" fill="#ef4444" fill-opacity="0.2"/>
+  <text x="255" y="118" fill="#f87171" font-family="-apple-system, sans-serif" font-weight="700" font-size="14" text-anchor="middle">
+    Vulnerable: Naïve XML Parser (XSW #1 Bypass)
+  </text>
+
+  <rect x="55" y="145" width="400" height="60" rx="6" fill="#0d111a" stroke="#203152"/>
+  <text x="70" y="170" fill="#fca5a5" font-family="monospace" font-size="12">Attacker intercepts low-privilege assertion</text>
+  <text x="70" y="190" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">Assertion signed by valid Enterprise IdP key</text>
+
+  <rect x="55" y="220" width="400" height="220" rx="6" fill="#1c0f18" stroke="#ef4444" stroke-opacity="0.4"/>
+  <text x="70" y="245" fill="#f87171" font-family="-apple-system, sans-serif" font-weight="700" font-size="12">XML SIGNATURE WRAPPING EXPLOIT:</text>
+  
+  <text x="70" y="275" fill="#fca5a5" font-family="-apple-system, sans-serif" font-size="11">&bull; Attacker crafts root assertion with NameID: admin</text>
+  <text x="70" y="305" fill="#fca5a5" font-family="-apple-system, sans-serif" font-size="11">&bull; Original signed assertion moved into &lt;Extensions&gt;</text>
+  <text x="70" y="335" fill="#fca5a5" font-family="-apple-system, sans-serif" font-size="11">&bull; XMLDSig verifier checks original ID -> Valid signature!</text>
+  <text x="70" y="365" fill="#fca5a5" font-family="-apple-system, sans-serif" font-size="11">&bull; XPath extracts 1st assertion: NameID = admin</text>
+  <text x="70" y="415" fill="#ef4444" font-family="-apple-system, sans-serif" font-weight="700" font-size="12">CRITICAL SUPER-ADMIN ACCOUNT TAKEOVER</text>
+
+  <!-- Right: Hardened Architecture -->
+  <rect x="530" y="80" width="430" height="380" rx="10" fill="#0c1729" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="545" y="95" width="400" height="34" rx="6" fill="#10b981" fill-opacity="0.2"/>
+  <text x="745" y="118" fill="#34d399" font-family="-apple-system, sans-serif" font-weight="700" font-size="14" text-anchor="middle">
+    Hardened: SAMLGuard Zero-Trust SP Engine
+  </text>
+
+  <rect x="545" y="145" width="400" height="60" rx="6" fill="#0d111a" stroke="#203152"/>
+  <text x="560" y="170" fill="#34d399" font-family="monospace" font-size="11">disallow-doctype-decl: true; blockXxe: true;</text>
+  <text x="560" y="190" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">External entities and DTDs completely disabled</text>
+
+  <rect x="545" y="220" width="400" height="220" rx="6" fill="#081723" stroke="#10b981" stroke-opacity="0.4"/>
+  <text x="560" y="245" fill="#34d399" font-family="-apple-system, sans-serif" font-weight="700" font-size="12">ZERO-TRUST SCHEMA VERIFICATION:</text>
+  
+  <text x="560" y="275" fill="#86efac" font-family="-apple-system, sans-serif" font-size="11">&bull; Schema check: Exactly 1 &lt;saml:Assertion&gt; permitted</text>
+  <text x="560" y="305" fill="#86efac" font-family="-apple-system, sans-serif" font-size="11">&bull; Detects multiple/nested assertions -> Discarded!</text>
+  <text x="560" y="335" fill="#86efac" font-family="-apple-system, sans-serif" font-size="11">&bull; Signature reference URI bound to root assertion node</text>
+  <text x="560" y="365" fill="#86efac" font-family="-apple-system, sans-serif" font-size="11">&bull; Exclusive Canonicalization (C14N) validates namespace</text>
+  <text x="560" y="415" fill="#10b981" font-family="-apple-system, sans-serif" font-weight="700" font-size="12">100% CRYPTOGRAPHIC CALLER ASSURANCE</text>
+</svg>
